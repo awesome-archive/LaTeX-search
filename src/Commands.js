@@ -162,7 +162,7 @@ const CommandList = [
   },{
     command: '\\ni',
     example: 'A \\ni a',
-    descriptions: ['owns', 'has member'],
+    descriptions: ['owns', 'has member', 'reverse in'],
   },{
     command: '\\notin',
     example: 'a \\notin A',
@@ -171,6 +171,14 @@ const CommandList = [
     command: '\\subset',
     example: 'a \\subset A',
     descriptions: ['is subset of', 'proper subset'],
+  },{
+    command: '\\supset',
+    example: 'A \\supset a',
+    descriptions: ['is superset of', 'proper superset'],
+  },{
+    command: '\\supseteq',
+    example: 'A \\supseteq a',
+    descriptions: ['is superset of', 'improper superset'],
   },{
     command: '\\not\\subset',
     example: 'a \\not\\subset A',
@@ -246,7 +254,15 @@ const CommandList = [
   },{
     command: '\\exists',
     example: '\\exists',
-    descriptions: ['exists', 'existential quantifier'],
+    descriptions: ['there exists', 'existential quantifier'],
+  },{
+    command: '\\nexists',
+    example: '\\nexists',
+    descriptions: ['there is no', 'there does not exist'],
+  },{
+    command: '\\exists!',
+    example: '\\exists!',
+    descriptions: ['there exists one and only one'],
   },{
     command: '\\hat{}',
     example: '\\hat{a}',
@@ -267,7 +283,168 @@ const CommandList = [
     command: '\\div',
     example: '\\div',
     descriptions: ['divide', 'division', '/'],
+  },{
+    command: '\\cap',
+    example: '\\cap',
+    descriptions: ['intersection', 'set intersection'],
+  },{
+    command: '\\cup',
+    example: '\\cup',
+    descriptions: ['union', 'set union'],
+  },{
+    command: '\\emptyset',
+    example: '\\emptyset',
+    descriptions: ['null set', 'empty set'],
+  },{
+    command: '\\triangle',
+    example: '\\triangle',
+    descriptions: ['triangle'],
+  },{
+    command: '\\angle',
+    example: '\\angle',
+    descriptions: ['angle'],
+  },{
+    command: '\\cong',
+    example: '\\cong',
+    descriptions: ['congruent'],
+  },{
+    command: '\\ncong',
+    example: '\\ncong',
+    descriptions: ['not congruent'],
+  },{
+    command: '\\sim',
+    example: '\\sim',
+    descriptions: ['similar', 'tilde'],
+  },{
+    command: '\\nsim',
+    example: '\\nsim',
+    descriptions: ['not similar'],
+  },{
+    command: '\\|',
+    example: '\\|',
+    descriptions: ['parallel'],
+  },{
+    command: '\\nparallel',
+    example: '\\nparallel',
+    descriptions: ['not parallel'],
+  },{
+    command: '\\perp',
+    example: '\\perp',
+    descriptions: ['perpendicular'],
+  },{
+    command: '\\not\\perp',
+    example: '\\not\\perp',
+    descriptions: ['not perpendicular'],
+  },{
+    command: '\\overrightarrow{}',
+    example: '\\overrightarrow{AB}',
+    descriptions: ['ray', 'half-line'],
+  },{
+    command: '\\%',
+    example: '\\%',
+    descriptions: ['percentage', '%'],
+  }, {
+    command: '\\textit{}',
+    example: '\\textit{italics}',
+    descriptions: ['italics', 'textit', 'italicize'],
+  }, {
+    command: '\\hspace{1in}',
+    example: '\\hspace{1in}',
+    descriptions: ['empty space', 'hspace'],
   },
+  {
+    command: '\\textrm{}',
+    example: '\\textrm{Text within equation}',
+    descriptions: ['text', 'text within equation','descriptions'],
+  },
+  {
+    command: '{} \\bmod{}',
+    example: 'a \\bmod b',
+    descriptions: ['mod', 'remainder','bmod'],
+  },
+    {
+    command: '{} \\pmod{}',
+    example: 'a \\pmod b',
+    descriptions: ['mod', 'remainder','pmod'],
+  },
+    {
+    command: '\\equiv',
+    example: '\\equiv',
+    descriptions: ['equals', 'equivalent'],
+  },
+   {
+    command: '\\partial',
+    example: '\\partial',
+    descriptions: ['partial derivative', 'derivative'],
+  },
+  {
+    command: '\\vec{}',
+    example: '\\vec{a}',
+    descriptions: ['vector'],
+  },
+   {
+    command: '\\underbrace{}_{}',
+    example: '\\underbrace{a+b+c}_{a sum}',
+    descriptions: ['underbrace'],
+  },
+  {
+    command: '\\overbrace{}_{}',
+    example: '\\overbrace{a+b+c}_{a sum}',
+    descriptions: ['overbrace'],
+  },
+  {
+    command: '\\ldots',
+    example: '\\ldots',
+    descriptions: ['dots','...','left','horizontal'],
+  },
+  {
+    command: '\\vdots',
+    example: '\\vdots',
+    descriptions: ['dots','...','down','vertical'],
+  },
+//   {
+//     command: `\\begin{bmatrix} a_{11} & a_{12} & \ldots \\
+// a_{21} & a_{22} & \ldots\\
+// \vdots & \vdots & \ddots \end{bmatrix}`,
+//     example: `\\begin{bmatrix} a_{11} & a_{12} & \ldots \\
+// a_{21} & a_{22} & \ldots\\
+// \vdots & \vdots & \ddots \end{bmatrix}`,
+//     descriptions: ['bmatrix','matrix','list','array'],
+//   },
+//   {
+//     command: `\\begin{pmatrix} a_{11} & a_{12} & \ldots \\
+// a_{21} & a_{22} & \ldots\\
+// \vdots & \vdots & \ddots \end{pmatrix}`,
+//     example: `\\begin{pmatrix} a_{11} & a_{12} & \ldots \\
+// a_{21} & a_{22} & \ldots\\
+// \vdots & \vdots & \ddots \end{pmatrix}`,
+//     descriptions: ['pmatrix','matrix','list','array'],
+//   },
+  {
+    command: '\\lfoor {} \rfloor',
+    example: '\\lfoor {\frac{a}{b}} \rfloor',
+    descriptions: ['round','floor','down','reduce'],
+  },
+    {
+    command: '\\lciel {} \rciel',
+    example: '\\lciel {\frac{a}{b}} \rciel',
+    descriptions: ['round','floor','down','reduce'],
+  },
+  // {
+  //   command: `f(n) = \left\{\begin{array}{cl}
+  //             {} & \textrm{if } {}\\
+  //             {} & \textrm{if } {}\\
+  //             {} &\textrm{if } {}
+  //             \end{array}
+  //             \right. %empty place holder right brace`,
+  //   example: `f(n) = \left\\begin{array}{cl}
+  //               0 & \textrm{if } n = 0\\
+  //               1 & \textrm{if } n = 1\\
+  //               f(n-1) + f(n-2) &\textrm{if } n\geq 2
+  //               \end{array}
+  //                \right. %empty place holder right brace`,
+  //   descriptions: ['compound function','function','piecewise functions'],
+  // },
 ]
 
 const greekAlphabet = [
